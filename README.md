@@ -1,10 +1,13 @@
 # Smarty template engine
-Smarty is a template engine for PHP, facilitating the separation of presentation (HTML/CSS) from application logic. 
+Smarty is a template engine for PHP, facilitating the separation of presentation (HTML/CSS) from application logic.
 
 ![CI](https://github.com/smarty-php/smarty/workflows/CI/badge.svg)
 
+## Fork info
+Forked for maintenance of version 2.6: Supporting newer PHP versions, etc.
+
 ## Documentation
-Read the [documentation](https://smarty-php.github.io/smarty/) to find out how to use it. 
+Read the [documentation](https://smarty-php.github.io/smarty/) to find out how to use it.
 
 ## Requirements
 Smarty can be run with PHP 7.1 to PHP 8.1.
