@@ -55,7 +55,7 @@ function smarty_modifier_date_format($string, $format = '%b %e, %Y', $default_da
     if (function_exists('strftime')) {
         return strftime($format, $timestamp);
     }
-    return '[ERROR: Date function strftime does not exist in this PHP version]'
+    return '[ERROR: Date function strftime does not exist in this PHP version]';
 }
 
 /* vim: set expandtab: */
