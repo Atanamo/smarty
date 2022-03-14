@@ -19,6 +19,7 @@ require_once $smarty->_get_plugin_filepath('shared', 'make_timestamp');
  *         - string: input date string
  *         - format: strftime format for output
  *         - default_date: default date if $string is empty
+ * @deprecated This modifier will only work until PHP 9.0, due to strftime() is deprecated since PHP 8.1.
  * @link http://smarty.php.net/manual/en/language.modifier.date.format.php
  *          date_format (Smarty online manual)
  * @author   Monte Ohrt <monte at ohrt dot com>
@@ -50,7 +51,11 @@ function smarty_modifier_date_format($string, $format = '%b %e, %Y', $default_da
         }
         $format = str_replace($_win_from, $_win_to, $format);
     }
-    return strftime($format, $timestamp);
+
+    if (function_exists('strftime')) {
+        return strftime($format, $timestamp);
+    }
+    return '[ERROR: Date function strftime does not exist in this PHP version]'
 }
 
 /* vim: set expandtab: */
